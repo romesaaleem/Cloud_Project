@@ -300,5 +300,5 @@ def reports():
             return send_file(pdf_path, as_attachment=True, download_name='STAR_Shield_Incident_Report.pdf')
     return render_template('reports.html')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=7860)
