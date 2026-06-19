@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STAR Shield AI - Alerts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container-fluid"><div class="row">
+        <div class="col-md-2 sidebar p-0">
+            <div class="p-4 text-center border-bottom border-secondary"><h5 class="text-primary fw-bold mb-0">STAR SHIELD AI</h5></div>
+            <nav class="nav flex-column mt-3">
+                <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a class="nav-link" href="{{ url_for('upload') }}">Ingest Logs</a>
+                <a class="nav-link active" href="{{ url_for('alerts') }}">Alert Matrix</a>
+                <a class="nav-link" href="{{ url_for('reports') }}">Compliance Reports</a>
+            </nav>
+        </div>
+        <div class="col-md-10 p-4" style="height: 100vh; overflow-y: auto;">
+            <h4>Central Security Incident Registry</h4>
+            <div class="card soc-card p-4 mt-3">
+                <table class="table table-dark table-hover table-dark-custom align-middle">
+                    <thead><tr><th>ID</th><th>Timestamp</th><th>Threat Pattern</th><th>Severity</th><th>Score</th><th>Action Mitigation Countermeasures</th><th>Status State</th></tr></thead>
+                    <tbody>
+                        {% for alert in alerts %}
+                        <tr>
+                            <td>#{{ alert.id }}</td><td>{{ alert.created_at }}</td><td class="text-info fw-bold">{{ alert.threat_type }}</td>
+                            <td><span class="badge badge-{{ alert.severity|lower }}">{{ alert.severity }}</span></td><td>{{ alert.risk_score }}%</td>
+                            <td class="small text-muted" style="max-width: 250px;">{{ alert.recommendation }}</td>
+                            <td>
+                                <form method="POST" class="d-flex gap-1">
+                                    <input type="hidden" name="alert_id" value="{{ alert.id }}">
+                                    <select name="status" class="form-select form-select-sm bg-dark text-white border-secondary" onchange="this.form.submit()">
+                                        <option value="Open" {% if alert.status == 'Open' %}selected{% endif %}>Open</option>
+                                        <option value="Investigating" {% if alert.status == 'Investigating' %}selected{% endif %}>Investigating</option>
+                                        <option value="Resolved" {% if alert.status == 'Resolved' %}selected{% endif %}>Resolved</option>
+                                    </select>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}<tr><td colspan="7" class="text-center text-muted">No operational logged events registry lines recorded.</td></tr>{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div></div>
+</body>
+</html>

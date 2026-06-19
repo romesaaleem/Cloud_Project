@@ -1,0 +1,89 @@
+:root {
+    --bg-main: #0B1220;
+    --sidebar-bg: #111827;
+    --card-bg: #1F2937;
+    --accent-blue: #3B82F6;
+    --success-green: #10B981;
+    --warning-yellow: #F59E0B;
+    --danger-red: #EF4444;
+    --text-main: #FFFFFF; /* High-contrast white text */
+    --text-muted: #E5E7EB; /* Bright gray text */
+}
+
+/* Core Layout & Clear Typography */
+body {
+    background-color: #0d1117; /* Deep midnight background */
+    color: #ffffff !important;  /* Pure white text for ultimate contrast */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, label, p, span {
+    color: #ffffff !important; /* Force all text to be highly visible */
+}
+
+/* Hyper-Visible Form Cards (Signup / Login) */
+.auth-card, .soc-card, .card {
+    background-color: #161b22 !important;  /* Dark card background */
+    border: 2px solid #58a6ff !important;   /* Vivid electric blue borders */
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* High Contrast Input Fields */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="file"],
+select {
+    background-color: #0d1117 !important; /* Pitch black field interior */
+    color: #ffffff !important;            /* Solid white typing text */
+    border: 2px solid #ffffff !important; /* Thick white borders so you can see the box */
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #9CA3AF !important;
+}
+
+/* High Visibility Action Buttons */
+.btn-primary, .btn-success, button[type="submit"] {
+    background-color: #238636 !important; /* Vibrant emerald green */
+    color: #ffffff !important;             /* Crisp white text */
+    border: 1px solid #2ea44f !important;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.btn-primary:hover, .btn-success:hover, button[type="submit"]:hover {
+    background-color: #2ea44f !important; /* Brighter on hover */
+}
+
+/* Sidebar Navigation Text */
+.sidebar .nav-link {
+    color: #ffffff !important; 
+    font-weight: 600;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background-color: rgba(59, 130, 246, 0.3) !important;
+    color: #58a6ff !important;
+}
+
+/* Tables & Badges text fix */
+.table-dark-custom td, .table-dark-custom th {
+    color: #ffffff !important;
+}
+
+.text-muted, .form-text {
+    color: #cbd5e1 !important; /* Make secondary text much brighter */
+}
+
+.border-left-blue { border-left: 6px solid var(--accent-blue) !important; }
+.border-left-red { border-left: 6px solid var(--danger-red) !important; }
+.border-left-yellow { border-left: 6px solid var(--warning-yellow) !important; }
+.border-left-green { border-left: 6px solid var(--success-green) !important; }

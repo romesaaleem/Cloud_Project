@@ -1,0 +1,10 @@
+192.168.1.50 - - [19/Jun/2026:00:15:22] "GET /login HTTP/1.1" 200 1043
+192.168.1.50 - - [19/Jun/2026:00:16:05] "POST /login HTTP/1.1" 302 452
+172.16.5.85 - - [19/Jun/2026:00:22:11] "GET /dashboard HTTP/1.1" 200 4820
+198.51.100.12 - - [19/Jun/2026:00:31:40] "GET /public/catalog.php?id=99%20AND%201=1 HTTP/1.1" 200 1540
+198.51.100.12 - - [19/Jun/2026:00:32:01] "GET /public/catalog.php?id=99%20UNION%20SELECT%20null,username,password%20FROM%20users HTTP/1.1" 500 820
+10.100.5.15 - - [19/Jun/2026:00:40:12] "GET /api/v1/telemetry HTTP/1.1" 200 310
+185.220.101.5 - - [19/Jun/2026:00:44:18] "GET /wp-admin/includes/ HTTP/1.1" 404 150
+185.220.101.5 - - [19/Jun/2026:00:44:55] "GET /v2/download.py?file=../../../../etc/passwd HTTP/1.1" 403 210
+192.168.1.200 - - [19/Jun/2026:00:52:10] "POST /upload HTTP/1.1" 200 12400
+192.168.1.15 - - [19/Jun/2026:01:02:33] "GET /static/style.css HTTP/1.1" 200 3420
